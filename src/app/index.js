@@ -1,5 +1,9 @@
-import { HelloWorld } from '~/app/template/HelloWorld';
+import { render } from '~/app/helpers/render';
+import { FlightSearch } from '~/app/template/features/flight-search';
+import { App } from '~/app/template/layout/App';
 
 export default (() => {
-  document.body.innerHTML = HelloWorld;
+  render(App, {
+    children: FlightSearch,
+  });
 })();
