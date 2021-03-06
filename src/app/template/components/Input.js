@@ -7,6 +7,7 @@ const defaults = {
 export const Input = ({ type, id, className } = defaults) => {
   return `
     <input
+      data-testid="input"
       type="${type}"
       ${renderInlineProp(id, 'id')}
       ${renderInlineProp(className, 'class')} />
