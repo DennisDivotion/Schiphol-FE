@@ -1,15 +1,32 @@
 import { renderInlineProp } from '~/app/helpers/render';
 
-const defaults = {
-  type: 'text',
-};
-
-export const Input = ({ type, id, className } = defaults) => {
+export const Input = ({
+  type,
+  id,
+  className,
+  label,
+  initialValue,
+  placeholder,
+}) => {
   return `
+  <div
+    class="rw-input"
+    data-component="rw-input-element"
+    data-realtime="true"
+  >
+    <label
+      for="${id}"
+      class="rw-input-label"
+    >
+      ${label}
+    </label>
     <input
-      data-testid="input"
-      type="${type}"
-      ${renderInlineProp(id, 'id')}
-      ${renderInlineProp(className, 'class')} />
+      type="${type || 'text'}"
+      id="${id}"
+      ${renderInlineProp(placeholder, 'placeholder')}
+      ${renderInlineProp(initialValue, 'value')}
+      ${renderInlineProp(['rw-input-text', className], 'class')}
+    />
+  </div>
   `;
 };
