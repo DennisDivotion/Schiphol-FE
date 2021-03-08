@@ -2,7 +2,7 @@ const initEvents = (events) => {
   events.forEach((event) => event());
 };
 
-export const renderInlineProp = (propValue, propKey) => {
+export const renderInlineProp = (propKey, propValue) => {
   if (propValue) {
     if (Array.isArray(propValue)) {
       return `${propKey}="${propValue.filter((item) => item).join(' ')}"`;

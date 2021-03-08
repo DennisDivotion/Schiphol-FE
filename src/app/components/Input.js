@@ -23,9 +23,9 @@ export const Input = ({
     <input
       type="${type || 'text'}"
       id="${id}"
-      ${renderInlineProp(placeholder, 'placeholder')}
-      ${renderInlineProp(initialValue, 'value')}
-      ${renderInlineProp(['rw-input-text', className], 'class')}
+      ${renderInlineProp('placeholder', placeholder)}
+      ${renderInlineProp('value', initialValue)}
+      ${renderInlineProp('class', ['rw-input-text', className])}
     />
   </div>
   `;

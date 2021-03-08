@@ -61,22 +61,22 @@ describe('render', () => {
 
 describe('renderInlineProp', () => {
   it('returns empty string when propValue is empty', () => {
-    const result = renderInlineProp(undefined, 'class');
+    const result = renderInlineProp('class');
 
     expect(result).toBe('');
   });
 
   it('returns a prop', () => {
-    const result = renderInlineProp('custom-class-name', 'class');
+    const result = renderInlineProp('class', 'custom-class-name');
 
     expect(result).toBe('class="custom-class-name"');
   });
 
   it('returns a prop from multiple values', () => {
-    const result = renderInlineProp(
-      ['custom-class-name', 'another-class'],
-      'class',
-    );
+    const result = renderInlineProp('class', [
+      'custom-class-name',
+      'another-class',
+    ]);
 
     expect(result).toBe('class="custom-class-name another-class"');
   });
