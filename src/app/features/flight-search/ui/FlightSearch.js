@@ -18,6 +18,7 @@ export const FlightSearch = () => `
       label: 'Search by airport',
       type: 'search',
       id: inputId,
+      description: 'Please enter at least three characters to start searching',
     })}
     <div data-testid="${flightSearchResultId}" id="${flightSearchResultId}"></div>
   </div>

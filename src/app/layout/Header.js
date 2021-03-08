@@ -3,9 +3,11 @@ export const Header = () => {
 
   return `
   <header>
-    <h1>
-      ${title}
-    </h1>
+    <div class="header-container">
+      <h1 class="header--title">
+        ${title}
+      </h1>
+    </div>
   </header>
 `;
 };

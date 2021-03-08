@@ -4,7 +4,9 @@ import { renderInline } from '~/app/helpers/render';
 export const FlightList = (flights) => {
   if (!flights.length) {
     return `
-      <h2>No results</h2>
+      <div class="variant-container">
+        <h2>No results</h2>
+      </div>
     `;
   }
 

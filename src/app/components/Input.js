@@ -1,4 +1,10 @@
-import { renderInlineProp } from '~/app/helpers/render';
+import { renderInline, renderInlineProp } from '~/app/helpers/render';
+
+const InputDescription = (description) => {
+  if (!description) return '';
+
+  return `<p class="rw-input__description">${description}</p>`;
+};
 
 export const Input = ({
   type,
@@ -7,6 +13,7 @@ export const Input = ({
   label,
   initialValue,
   placeholder,
+  description,
 }) => {
   return `
   <div
@@ -14,6 +21,7 @@ export const Input = ({
     data-component="rw-input-element"
     data-realtime="true"
   >
+    ${renderInline(InputDescription, description)}
     <label
       for="${id}"
       class="rw-input-label"

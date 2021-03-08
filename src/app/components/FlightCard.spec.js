@@ -1,4 +1,4 @@
-import { queryByText } from '@testing-library/dom';
+import { queryByText, queryByRole } from '@testing-library/dom';
 
 import { FlightCard } from './FlightCard';
 
@@ -42,19 +42,15 @@ describe('FlightCard', () => {
     expect(queryByText(container, /14:30/)).toBeInTheDocument();
   });
 
-  it('renders an original time', () => {
+  it('renders a link', () => {
     const container = renderFlightCard({
-      originalTime: '20:30',
+      url: '/some-url/',
     });
 
-    expect(queryByText(container, /20:30/)).toBeInTheDocument();
-  });
-
-  it('renders a score', () => {
-    const container = renderFlightCard({
-      expectedTime: '50.125',
-    });
-
-    expect(queryByText(container, /50.125/)).toBeInTheDocument();
+    expect(queryByRole(container, 'link')).toHaveAttribute(
+      'href',
+      '/some-url/',
+    );
+    expect(queryByRole(container, 'link')).toHaveAttribute('target', '_blank');
   });
 });

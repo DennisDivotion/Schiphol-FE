@@ -1,4 +1,4 @@
-import { getByLabelText } from '@testing-library/dom';
+import { getByLabelText, queryByText } from '@testing-library/dom';
 import userEvent from '@testing-library/user-event';
 
 import { Input } from './Input';
@@ -102,5 +102,20 @@ describe('Input component', () => {
     const element = getByLabelText(container, 'First name');
 
     expect(element).toHaveAttribute('placeholder', 'Enter your first name');
+  });
+
+  it('renders an input with a description', () => {
+    const container = renderInput({
+      label: 'First name',
+      id: 'first-name',
+      description: 'Please enter at least three characters to start searching',
+    });
+
+    const element = queryByText(
+      container,
+      'Please enter at least three characters to start searching',
+    );
+
+    expect(element).toBeInTheDocument();
   });
 });
