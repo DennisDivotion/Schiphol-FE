@@ -1,9 +1,9 @@
-import { render } from '~/app/helpers/render';
 import {
   FlightSearch,
   FlightSearchEvents,
-} from '~/app/template/features/flight-search';
-import { App } from '~/app/template/layout/App';
+} from '~/app/features/flight-search/ui/';
+import { render } from '~/app/helpers/render';
+import { App } from '~/app/layout/App';
 
 export default (() => {
   render(

@@ -1,4 +1,4 @@
-import { getByLabelText, getByText, queryByText } from '@testing-library/dom';
+import { queryByText } from '@testing-library/dom';
 
 import { render, renderInline, renderInlineProp } from './render';
 

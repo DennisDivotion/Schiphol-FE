@@ -1,3 +1,4 @@
+const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
@@ -14,6 +15,9 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'A small assignment for frontend developers at Schiphol',
+    }),
+    new CopyPlugin({
+      patterns: [{ from: 'src/static', to: 'static' }],
     }),
   ],
   module: {

@@ -8,8 +8,8 @@
 		"test:watch": "jest --watch",
 		"dev": "webpack serve",
 		"build": "webpack",
-		"lint": "eslint 'src/**/*.{js|json}'",
-		"lint:fix": "eslint 'src/**/*.{js|json}' --fix"
+		"lint": "eslint 'src/**/*.js'",
+		"lint:fix": "eslint 'src/**/*.js' --fix"
 	},
 	"author": "",
 	"license": "ISC",
@@ -24,6 +24,7 @@
 		"babel-eslint": "^10.1.0",
 		"babel-loader": "^8.2.2",
 		"babel-preset-env": "^1.7.0",
+		"copy-webpack-plugin": "^8.0.0",
 		"css-loader": "^5.1.1",
 		"eslint": "^7.21.0",
 		"eslint-config-airbnb": "^18.2.1",
