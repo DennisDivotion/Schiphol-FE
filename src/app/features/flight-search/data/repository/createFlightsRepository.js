@@ -3,12 +3,12 @@ const filterFlightsByAirport = (flights, airport) =>
 
 export const createFlightsRepository = (service) => {
   return {
-    get(airport) {
-      return service
-        .performRequest({
-          endpoint: '/static/flights.json',
-        })
-        .then((response) => filterFlightsByAirport(response.flights, airport));
+    async get(airport) {
+      const response = await service.performRequest({
+        endpoint: '/static/flights.json',
+      });
+
+      return filterFlightsByAirport(response.flights, airport);
     },
   };
 };

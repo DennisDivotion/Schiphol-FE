@@ -1,7 +1,9 @@
 export const createFetchService = () => {
   return {
-    performRequest: (options) => {
-      return fetch(options.endpoint).then((res) => res.json());
+    performRequest: async (options) => {
+      const response = await fetch(options.endpoint);
+
+      return response.json();
     },
   };
 };
